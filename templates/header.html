@@ -11,12 +11,17 @@
                     <span>login</span>
                 </a>
             {% else %}
-            <form action="{% url 'accountapp:logout' %}?next={{ request.path }}" method="post" style="display: inline;">
+               <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                    <span>Mypage</span>
+                </a>
+            <form action="{% url 'accountapp:logout' %}" method="post" style="display: inline;">
                 {% csrf_token %}
+                <input type="hidden" name="next" value="{{ request.path }}">
                 <button type="submit" class="btn btn-link" style="padding: 0; border: none; background: none;">
-                    <span>logout</span>
+                <span>logout</span>
                 </button>
             </form>
+
             {% endif %}
         </div>
 
