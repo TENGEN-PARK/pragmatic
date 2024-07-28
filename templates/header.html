@@ -3,7 +3,9 @@
             <h1 class="pragmatic_logo">Pragmatic</h1>
         </div>
         <div>
-            <spane>nav1</spane>
+                <a href="{% url 'articleapp:list' %}">
+                    <span>Articles</span>
+                </a>
             <span>nav2</span>
             <span>nav3</span>
             {% if not  user.is_authenticated%}
